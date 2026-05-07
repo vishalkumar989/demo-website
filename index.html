@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MPGI Payment Clone</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f3f3f3;
+    }
+
+    /* TOP HEADER */
+    .top-header{
+      background:#0f1b33;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:white;
+    }
+
+    .home-icon{
+      font-size:24px;
+    }
+
+    .url-box{
+      background:#2b2b2b;
+      color:#ddd;
+      padding:10px 16px;
+      border-radius:30px;
+      flex:1;
+      font-size:18px;
+      overflow:hidden;
+    }
+
+    .top-icons{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      font-size:26px;
+    }
+
+    /* BLUE NAVBAR */
+    .navbar{
+      background:#243c63;
+      padding:18px 18px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      color:white;
+    }
+
+    .left-nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .menu{
+      font-size:34px;
+      margin-top:12px;
+    }
+
+    .go-btn{
+      background:#ff6600;
+      border:none;
+      color:white;
+      padding:18px 34px;
+      border-radius:10px;
+      font-size:22px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .right-user{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .user-icon{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      background:white;
+      color:#d57c4d;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+    }
+
+    .user-text{
+      font-size:24px;
+      line-height:45px;
+    }
+
+    /* MAIN */
+    .main{
+      padding:18px;
+    }
+
+    .card{
+      background:white;
+      border-radius:10px;
+      padding:18px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .table-wrapper{
+      overflow-x:auto;
+      border:1px solid #ddd;
+    }
+
+    table{
+      min-width:700px;
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    th{
+      background:#2c2544;
+      color:white;
+      border:2px solid #fff;
+      padding:18px;
+      font-size:20px;
+      text-align:left;
+    }
+
+    td{
+      background:#8f8f8f;
+      height:70px;
+      border:1px solid #ddd;
+    }
+
+    .checkbox{
+      width:28px;
+      height:28px;
+    }
+
+    .advance-box{
+      margin-top:14px;
+    }
+
+    .advance-box label{
+      font-size:30px;
+      color:#666;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .advance-box input{
+      width:100%;
+      height:70px;
+      border:2px solid #aaa;
+      border-radius:4px;
+      font-size:30px;
+      padding-left:12px;
+    }
+
+    /* PAY IMAGE */
+    .pay-card{
+      margin-top:20px;
+      background:white;
+      border-radius:10px;
+      padding:35px;
+      text-align:center;
+    }
+
+    .pay-card img{
+      width:280px;
+      max-width:100%;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP URL BAR -->
+  <div class="top-header">
+
+    <div class="home-icon">⌂</div>
+
+    <div class="url-box">
+      elogisol.com/mpgi/
+    </div>
+
+    <div class="top-icons">
+      <span>＋</span>
+      <span style="font-size:18px;border:1px solid #999;padding:3px 8px;border-radius:6px;">34</span>
+      <span>⋮</span>
+    </div>
+
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+
+    <div class="left-nav">
+
+      <div class="menu">☰</div>
+
+      <button class="go-btn" onclick="goToMPGI()">
+        Go back to mpgi
+      </button>
+
+    </div>
+
+    <div class="right-user">
+
+      <div class="user-icon">👤</div>
+
+      <div class="user-text">
+        MOHD.<br>
+        ADIL
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CONTENT -->
+  <div class="main">
+
+    <div class="card">
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <tr>
+            <th style="width:70px;">
+              <input type="checkbox" class="checkbox">
+            </th>
+
+            <th>Student Name</th>
+
+            <th></th>
+          </tr>
+
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+
+        </table>
+
+      </div>
+
+      <div class="advance-box">
+
+        <label>Advance</label>
+
+        <input type="text" value="0">
+
+      </div>
+
+    </div>
+
+    <!-- PAY CARD -->
+    <div class="pay-card">
+
+      <img src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png">
+
+    </div>
+
+  </div>
+
+  <script>
+    function goToMPGI(){
+      window.location.href = "https://www.mpgi.edu.in/";
+    }
+  </script>
+
+</body>
+</html>
