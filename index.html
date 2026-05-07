@@ -15,7 +15,7 @@
 
         body {
             background-color: #f5f5f5;
-            overflow-x: hidden; /* Taki sidebar bahar na nikle */
+            overflow-x: hidden; 
         }
 
         /* Top Navbar Styling */
@@ -27,7 +27,7 @@
             padding: 10px 15px;
             color: white;
             position: relative;
-            z-index: 1001; /* Sidebar ke upar rakhne ke liye */
+            z-index: 1001;
         }
 
         .nav-left {
@@ -36,45 +36,61 @@
             gap: 15px;
         }
 
-        .logo-box {
-            background-color: white;
-            color: black;
-            padding: 8px 12px;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 4px;
-        }
-
         .menu-icon {
             font-size: 24px;
             cursor: pointer;
             color: white;
         }
 
+        .logo-box {
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
         .go-back-btn {
             background-color: #ff5e00;
             color: white;
-            text-decoration: none;
             padding: 8px 15px;
             border-radius: 4px;
             font-weight: 600;
             font-size: 14px;
             border: none;
             cursor: pointer;
+            text-decoration: none; /* Link underline hatane ke liye */
+            display: inline-block;
         }
 
         .go-back-btn:hover {
             background-color: #e05300;
         }
 
-        /* Sidebar Styling (New) */
+        .user-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: #d1d8e0;
+            text-transform: uppercase;
+        }
+
+        .user-profile i {
+            font-size: 20px;
+            margin-bottom: 3px;
+            color: white;
+        }
+
+        /* Sidebar Styling */
         .sidebar {
             height: 100%;
             width: 280px;
             position: fixed;
             z-index: 1000;
-            top: 60px; /* Navbar ke theek niche se start */
-            left: -280px; /* Hidden by default */
+            top: 60px; 
+            left: -280px; 
             background-color: #f0f0f0;
             overflow-y: auto;
             transition: left 0.3s ease;
@@ -82,7 +98,7 @@
         }
 
         .sidebar.active {
-            left: 0; /* Jab menu button click ho to slide in karega */
+            left: 0; 
         }
 
         .sidebar-item {
@@ -101,7 +117,7 @@
         }
 
         .dropdown-btn {
-            background-color: #e2e8f0; /* Photo ke hisaab se light blue tint */
+            background-color: #e2e8f0; 
             font-weight: bold;
             color: #222;
         }
@@ -113,7 +129,7 @@
         }
 
         .item-left i {
-            color: #1a56c8; /* Blue color icons ke liye */
+            color: #1a56c8; 
             font-size: 18px;
             width: 20px;
             text-align: center;
@@ -130,17 +146,12 @@
         }
 
         .dropdown-container {
-            display: none; /* Default hidden, JS se toggle hoga */
+            display: none; 
             background-color: #f0f0f0;
         }
 
-        /* Photo me dono dropdown open the isliye ek 'show' class lagai hai */
-        .dropdown-container.show {
-            display: block;
-        }
-
         .sidebar-subitem {
-            padding: 12px 20px 12px 52px; /* Indent sub items */
+            padding: 12px 20px 12px 52px; 
             font-size: 14px;
             color: #666;
             border-bottom: 1px solid #dfdfdf;
@@ -154,7 +165,6 @@
         /* Main Content Styling */
         .main-content {
             padding: 15px;
-            transition: margin-left 0.3s ease;
         }
 
         .card {
@@ -211,20 +221,24 @@
             font-size: 16px;
             outline: none;
         }
-
     </style>
 </head>
 <body>
 
     <header class="navbar">
         <div class="nav-left">
-            <div class="logo-box">eLOGIPay System</div>
             <div class="menu-icon" id="menuBtn">
                 <i class="fas fa-bars"></i>
             </div>
+            <div class="logo-box">eLOGIPay System</div>
         </div>
         
         <a href="https://www.mpgi.edu.in/" class="go-back-btn">Go back to mpgi</a>
+        
+        <div class="user-profile">
+            <i class="far fa-user"></i>
+            <span>LALIT KATIYAR</span>
+        </div>
     </header>
 
     <div class="sidebar" id="sidebar">
@@ -232,31 +246,31 @@
             <div class="item-left">Student Info</div>
         </div>
         
-        <div class="sidebar-item dropdown-btn open">
+        <div class="sidebar-item dropdown-btn">
             <div class="item-left">
                 <i class="fas fa-credit-card"></i> 
                 Transaction
             </div>
             <i class="fas fa-chevron-down arrow"></i>
         </div>
-        <div class="dropdown-container show">
+        <div class="dropdown-container">
             <div class="sidebar-subitem">Pay Fee Online</div>
         </div>
 
-        <div class="sidebar-item dropdown-btn open">
+        <div class="sidebar-item dropdown-btn">
             <div class="item-left">
                 <i class="fas fa-tachometer-alt"></i> 
                 Reports
             </div>
             <i class="fas fa-chevron-down arrow"></i>
         </div>
-        <div class="dropdown-container show">
+        <div class="dropdown-container">
             <div class="sidebar-subitem">Student Fee Details</div>
             <div class="sidebar-subitem">Fee Receipt</div>
         </div>
     </div>
 
-    <main class="main-content" id="mainContent">
+    <main class="main-content">
         <div class="card">
             <div class="table-header">
                 <div class="col-checkbox">
@@ -268,14 +282,14 @@
             <div class="form-section">
                 <div class="form-group">
                     <label>Advance</label>
-                    <input type="text" value="0" id="advanceInput">
+                    <input type="text" value="0">
                 </div>
             </div>
         </div>
     </main>
 
     <script>
-        // 1. Sidebar open/close karne ka logic
+        // Menu Toggle Logic
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.getElementById('sidebar');
 
@@ -283,19 +297,15 @@
             sidebar.classList.toggle('active');
         });
 
-        // 2. Dropdown menus ko open/close karne ka logic
+        // Dropdown Toggle Logic
         const dropdowns = document.querySelectorAll('.dropdown-btn');
         
         dropdowns.forEach(dropdown => {
             dropdown.addEventListener('click', function() {
-                // Arrow ghumane ke liye class toggle
                 this.classList.toggle('open');
-                
-                // Content hide/show karne ke liye
                 const dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block" || dropdownContent.classList.contains('show')) {
+                if (dropdownContent.style.display === "block") {
                     dropdownContent.style.display = "none";
-                    dropdownContent.classList.remove('show');
                 } else {
                     dropdownContent.style.display = "block";
                 }
